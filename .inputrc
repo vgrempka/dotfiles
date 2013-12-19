@@ -1,3 +1,8 @@
+# Allow UTF-8 input and output, instead of showing stuff like $'\0123\0456'
+set input-meta on
+set output-meta on
+set convert-meta off
+
 set show-all-if-ambiguous on
 set completion-ignore-case on
 
@@ -14,8 +19,3 @@ set editing-mode vi
 # Search through previous commands
 "\e[A": history-search-backward
 "\e[B": history-search-forward
-
-# Allow UTF-8 input and output, instead of showing stuff like $'\0123\0456'
-set input-meta on
-set output-meta on
-set convert-meta off

@@ -81,7 +81,10 @@ nnoremap <leader>t :tabedit<Space>
 set term=xterm-256color
 
 " Color scheme
-set t_Co=256
+if &term == "screen"
+	set t_Co=256
+endif
+
 syntax on
 colorscheme molokai
 filetype plugin indent on
@@ -200,3 +203,17 @@ let NERDTreeShowBookmarks=1
 
 " Start interactive EasyAlign in visual mode
 vmap <Enter> <Plug>(EasyAlign)
+
+" Vim airline config
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+	let g:airline_powerline_fonts=0
+	let g:airline_left_sep = '⫸'
+	let g:airline_right_sep = '◀'
+	let g:airline_symbols.linenr = '␊'
+	let g:airline_symbols.branch = '⎇'
+	let g:airline_symbols.paste = 'ρ'
+	let g:airline_symbols.whitespace = 'Ξ'
+endif
